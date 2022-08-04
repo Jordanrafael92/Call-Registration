@@ -9,7 +9,7 @@ import com.jrsilva.callRegistration.entities.Person;
 import com.jrsilva.callRegistration.repositories.PersonRepository;
 
 @Service
-public class PersonServices {
+public class PersonService {
 
 	@Autowired
 	private PersonRepository repository;
