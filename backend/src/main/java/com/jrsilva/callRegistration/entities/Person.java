@@ -3,6 +3,9 @@ package com.jrsilva.callRegistration.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Person implements Serializable {
 
 	private static final long serialVersionUID = 1L;
