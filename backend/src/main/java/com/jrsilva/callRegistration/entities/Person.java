@@ -18,13 +18,13 @@ public class Person implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idPerson;
 	private String name;
-	private Number cpf;
+	private Long cpf;
 	
 	public Person () {
 		
 	}
 
-	public Person(Long idPerson, String name, Number cpf) {
+	public Person(Long idPerson, String name, Long cpf) {
 		super();
 		this.idPerson = idPerson;
 		this.name = name;
@@ -47,11 +47,11 @@ public class Person implements Serializable {
 		this.name = name;
 	}
 
-	public Number getCpf() {
+	public Long getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(Number cpf) {
+	public void setCpf(Long cpf) {
 		this.cpf = cpf;
 	}
 
