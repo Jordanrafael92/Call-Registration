@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.jrsilva.callRegistration.dto.PersonDTO;
 import com.jrsilva.callRegistration.entities.Person;
 import com.jrsilva.callRegistration.repositories.PersonRepository;
+import com.jrsilva.callRegistration.services.exceptions.EntityNotFoundException;
 
 @Service
 public class PersonService {
@@ -29,7 +30,20 @@ public class PersonService {
 	@Transactional(readOnly = true)
 	public PersonDTO findById(Long id) {
 		Optional<Person> obj = repository.findById(id);
-		Person entity = obj.get();
+		Person entity = obj.orElseThrow(() -> new EntityNotFoundException("Entity not found!"));
 		return new PersonDTO(entity);
+	}
+
+	@Transactional
+	public PersonDTO insert(PersonDTO dto) {
+		Person entity = new Person();
+		entity = entityValues(dto, entity);
+		return new PersonDTO(entity);
+	}
+	
+	private Person entityValues(PersonDTO dto, Person entity) {
+		entity.setName(dto.getName());
+		entity.setCpf(dto.getCpf());
+		return entity;
 	}
 }
