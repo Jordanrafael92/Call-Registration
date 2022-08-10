@@ -1,6 +1,7 @@
 package com.jrsilva.callRegistration.services;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,12 @@ public class PersonService {
 
 		return list.stream().map(x -> new PersonDTO(x)).collect(Collectors.toList());
 
+	}
+
+	@Transactional(readOnly = true)
+	public PersonDTO findById(Long id) {
+		Optional<Person> obj = repository.findById(id);
+		Person entity = obj.get();
+		return new PersonDTO(entity);
 	}
 }
