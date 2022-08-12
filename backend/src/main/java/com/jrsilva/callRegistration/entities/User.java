@@ -5,11 +5,13 @@ import java.util.Objects;
 
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
+	
 	private Long idUser;
 	private Long idPerson;
 	private String login;
 	private String password;
 	private Boolean admin;
+	
 	public Long getIdUser() {
 		return idUser;
 	}

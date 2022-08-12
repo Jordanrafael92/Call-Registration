@@ -49,6 +49,7 @@ public class PersonService {
 		return entity;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Transactional
 	public PersonDTO update(Long id, PersonDTO dto) {
 		try {
