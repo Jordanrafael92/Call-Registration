@@ -22,6 +22,10 @@ public class User implements Serializable {
 	private String password;
 	private Boolean admin;
 	
+	public User() {
+		
+	}
+	
 	public Long getIdUser() {
 		return idUser;
 	}
