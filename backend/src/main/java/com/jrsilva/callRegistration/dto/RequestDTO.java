@@ -6,6 +6,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
 import com.jrsilva.callRegistration.config.DescriptionStatus;
+import com.jrsilva.callRegistration.entities.Request;
 
 public class RequestDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -21,11 +22,11 @@ public class RequestDTO implements Serializable{
 		
 	}
 
-	public RequestDTO(Long idRequest, Long idUser, String description, DescriptionStatus status) {
-		this.idRequest = idRequest;
-		this.idUser = idUser;
-		this.description = description;
-		this.status = status;
+	public RequestDTO(Request entity) {
+		this.idRequest = entity.getIdRequest();
+		this.idUser = entity.getIdUser();
+		this.description = entity.getDescription();
+		this.status = entity.getStatus();
 	}
 
 	public Long getIdRequest() {
