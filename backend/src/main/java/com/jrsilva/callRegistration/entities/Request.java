@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.jrsilva.callRegistration.config.DescriptionStatus;
+
 @Entity
 @Table(name = "tb_request")
 public class Request implements Serializable {
@@ -18,13 +20,13 @@ public class Request implements Serializable {
 	private Long idRequest;
 	private Long idUser;
 	private String description;
-	private Long status;
+	private DescriptionStatus status;
 	
 	public Request() {
 		
 	}
 
-	public Request(Long idRequest, Long idUser, String description, Long status) {
+	public Request(Long idRequest, Long idUser, String description, DescriptionStatus status) {
 		super();
 		this.idRequest = idRequest;
 		this.idUser = idUser;
@@ -56,11 +58,11 @@ public class Request implements Serializable {
 		this.description = description;
 	}
 
-	public Long getStatus() {
+	public DescriptionStatus getStatus() {
 		return status;
 	}
 
-	public void setStatus(Long status) {
+	public void setStatus(DescriptionStatus status) {
 		this.status = status;
 	}
 	
