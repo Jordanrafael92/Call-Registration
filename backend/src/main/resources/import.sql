@@ -6,3 +6,6 @@ insert into tb_user(id_person, login, password, admin) values (1, 'Debora', '123
 insert into tb_user(id_person, login, password, admin) values (2, 'Jonatas', '1234', false);
 insert into tb_user(id_person, login, password, admin) values (3, 'Suria', '1234', false);
 insert into tb_user(id_person, login, password, admin) values (4, 'Samara', '1234', true);
+insert into tb_request(id_user, description, status) values (1, 'Descrição da requisição 1.', 'ABERTO');
+insert into tb_request(id_user, description, status) values (2, 'Descrição da requisição 2.', 'CONCLUIDA');
+insert into tb_request(id_user, description, status) values (3, 'Descrição da requisição 3.', 'CANCELADA');
