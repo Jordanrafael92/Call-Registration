@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import com.jrsilva.callRegistration.entities.User;
 
-public class UserDTO implements Serializable{
+public class UserDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Long idUser;
