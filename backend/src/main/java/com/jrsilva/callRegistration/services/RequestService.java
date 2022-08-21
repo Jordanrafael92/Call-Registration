@@ -32,4 +32,13 @@ public class RequestService {
 		Request entity = obj.orElseThrow(() -> new EntityNotFoundException("Entity not found - (Request)"));
 		return new RequestDTO(entity);
 	}
+	
+	@Transactional
+	public RequestDTO insert(RequestDTO dto) {
+		Request entity = new Request();
+		entity.setDescription(dto.getDescription());
+		entity.setIdUser(dto.getIdUser());
+		entity.setStatus(dto.getStatus());
+		return new RequestDTO(entity);
+	}
 }
