@@ -25,7 +25,6 @@ public class Person implements Serializable {
 	}
 
 	public Person(Long idPerson, String name, Long cpf) {
-		super();
 		this.idPerson = idPerson;
 		this.name = name;
 		this.cpf = cpf;

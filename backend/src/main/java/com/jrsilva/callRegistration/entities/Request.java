@@ -31,7 +31,6 @@ public class Request implements Serializable {
 	}
 
 	public Request(Long idRequest, Long idUser, String description, DescriptionStatus status) {
-		super();
 		this.idRequest = idRequest;
 		this.idUser = idUser;
 		this.description = description;
