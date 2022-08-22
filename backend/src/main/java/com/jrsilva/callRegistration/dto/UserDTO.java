@@ -7,7 +7,7 @@ import com.jrsilva.callRegistration.entities.User;
 public class UserDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	private Long idUser;
+	private Long id;
 	private Long idPerson;
 	private String login;
 	private String password;
@@ -18,19 +18,19 @@ public class UserDTO implements Serializable {
 	}
 
 	public UserDTO(User entity) {
-		this.idUser = entity.getIdUser();
+		this.id = entity.getId();
 		this.idPerson = entity.getIdPerson();
 		this.login = entity.getLogin();
 		this.password = entity.getPassword();
 		this.admin = entity.getAdmin();
 	}
 
-	public Long getIdUser() {
-		return idUser;
+	public Long getId() {
+		return id;
 	}
 
-	public void setIdUser(Long idUser) {
-		this.idUser = idUser;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public Long getIdPerson() {
