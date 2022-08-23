@@ -1,12 +1,14 @@
 package com.jrsilva.callRegistration.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +23,9 @@ public class User implements Serializable {
 	private String login;
 	private String password;
 	private Boolean admin;
+	
+	@OneToMany
+	private List<Request> request;
 	
 	public User() {
 		
@@ -56,10 +61,12 @@ public class User implements Serializable {
 	public void setAdmin(Boolean admin) {
 		this.admin = admin;
 	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -71,6 +78,7 @@ public class User implements Serializable {
 		User other = (User) obj;
 		return Objects.equals(id, other.id);
 	}
+	
 	public User(Long id, Long idPerson, String login, String password, Boolean admin) {
 		super();
 		this.id = id;
@@ -80,4 +88,5 @@ public class User implements Serializable {
 		this.admin = admin;
 	}
 		
+	
 }

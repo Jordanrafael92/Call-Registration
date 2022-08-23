@@ -8,6 +8,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.jrsilva.callRegistration.config.DescriptionStatus;
@@ -22,6 +23,9 @@ public class Request implements Serializable {
 	private Long idRequest;
 	private Long idUser;
 	private String description;
+	
+	@ManyToOne
+	private User user;
 	
 	@Enumerated(EnumType.STRING)
 	private DescriptionStatus status = DescriptionStatus.ABERTO;
@@ -67,6 +71,14 @@ public class Request implements Serializable {
 
 	public void setStatus(DescriptionStatus status) {
 		this.status = status;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 	
 }
